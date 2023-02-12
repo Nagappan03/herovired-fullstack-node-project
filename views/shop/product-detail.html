@@ -1,0 +1,18 @@
+<%- include('../includes/header.html') %>
+</head>
+
+<body>
+  <%- include('../includes/navigation.html') %>
+  <main class="centered">
+    <h1><%= product.title %></h1>
+    <hr>
+    <div class="image">
+      <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+    </div>
+    <h2><%= product.price %></h2>
+    <p><%= product.description %></p>
+    <% if (isAuthenticated) { %>
+    <%- include('../includes/add-to-cart.html', {product: product}) %>
+    <% } %>
+  </main>
+  <%- include('../includes/end.html') %>
